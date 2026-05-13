@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DineHub — Savor the Taste of Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-brand">DineHub</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#highlights">Menu</a>
+            <a href="#reserve">Reserve</a>
+            <a href="#walkin">Walk-In</a>
+            <a href="index.html" class="nav-cta">Order Online</a>
+            <!-- Login/Register button injected here by script.js -->
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">Est. 2010 · Gourmet City</span>
+            <h1>Savor the Taste<br><em>of Excellence</em></h1>
+            <p class="hero-sub">From our kitchen to your table — or your door.</p>
+            <div class="hero-actions">
+                <a href="index.html" class="btn-primary">Order Online</a>
+                <a href="#reserve" class="btn-ghost">Reserve a Table</a>
+            </div>
+        </div>
+        <div class="hero-badge">
+            <span>Open Daily</span>
+            <strong>1 PM – 11 PM</strong>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="about-grid">
+            <div class="about-text">
+                <span class="section-label">Our Story</span>
+                <h2>More Than a Meal,<br>It's a Memory</h2>
+                <p>Founded in 2010, DineHub began as a small family bistro in the heart of Gourmet City. What started with a simple belief — that great food brings people together — has grown into one of the city's most beloved dining destinations.</p>
+                <p>From hand-crafted recipes to a seamless online ordering experience, every detail is designed to make your time with us unforgettable.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <strong>14+</strong>
+                    <span>Years of Service</span>
+                </div>
+                <div class="stat">
+                    <strong>7</strong>
+                    <span>Dining Tables</span>
+                </div>
+                <div class="stat">
+                    <strong>20+</strong>
+                    <span>Menu Items</span>
+                </div>
+                <div class="stat">
+                    <strong>3</strong>
+                    <span>Delivery Riders</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights" class="highlights-section">
+        <span class="section-label">From the Kitchen</span>
+        <h2>Menu Highlights</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-img" style="background-image: url('fries.jpeg')"></div>
+                <div class="highlight-body">
+                    <span class="tag">Starters</span>
+                    <h3>Loaded Jalapeño Fries</h3>
+                    <p>Crispy fries topped with jalapeños, cheese, and a creamy sauce.</p>
+                    <strong>$7.99</strong>
+                </div>
+            </div>
+            <div class="highlight-card featured">
+                <div class="highlight-img" style="background-image: url('pizza.jpeg')"></div>
+                <div class="highlight-body">
+                    <span class="tag">Main Course</span>
+                    <h3>Signature Pizza</h3>
+                    <p>Freshly baked with the finest house-blended ingredients.</p>
+                    <strong>$10.99</strong>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img" style="background-image: url('beefsteak.jpg')"></div>
+                <div class="highlight-body">
+                    <span class="tag">Main Course</span>
+                    <h3>Prime Beef Steak</h3>
+                    <p>Juicy and tender, grilled to your perfect finish.</p>
+                    <strong>$12.99</strong>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-img" style="background-image: url('Chocolate Tiramisu.jpeg')"></div>
+                <div class="highlight-body">
+                    <span class="tag">Desserts</span>
+                    <h3>Tiramisu</h3>
+                    <p>Coffee-soaked biscuits with layers of mascarpone cream.</p>
+                    <strong>$4.99</strong>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top: 2.5rem;">
+            <a href="index.html" class="btn-primary">View Full Menu & Order</a>
+        </div>
+    </section>
+
+    <!-- RESERVATION SECTION -->
+    <section id="reserve" class="reserve-section">
+        <div class="reserve-inner">
+            <span class="section-label light">Book Ahead</span>
+            <h2>Reserve Your Table</h2>
+            <p class="reserve-sub">Our AI system will find the best available table for your party.</p>
+            <form class="reserve-form" id="reserveForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="e.g. Sara Ahmed" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="e.g. 0300-1234567" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date & Time</label>
+                        <input type="datetime-local" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Party Size</label>
+                        <!--
+                            IMPORTANT: value must be a plain number.
+                            script.js reads this with parseInt() to send to the backend.
+                        -->
+                        <select required>
+                            <option value="">Select guests</option>
+                            <option value="1">1 person</option>
+                            <option value="2">2 people</option>
+                            <option value="3">3 people</option>
+                            <option value="4">4 people</option>
+                            <option value="5">5 people</option>
+                            <option value="6">6 people</option>
+                            <option value="7">7+ people</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary full-width">Request Reservation</button>
+            </form>
+            <div class="reserve-confirmation hidden" id="reserveConfirm">
+                <div class="confirm-icon">✓</div>
+                <h3>Reservation Confirmed!</h3>
+                <p>Our AI has assigned you the best available table. See you soon!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WALK-IN QUEUE SECTION -->
+    <section id="walkin" class="walkin-section">
+        <div class="walkin-inner">
+            <span class="section-label">No Reservation? No Problem.</span>
+            <h2>Join the Walk-In Queue</h2>
+            <p>Just arrived without a booking? Add yourself to our live waiting queue and we'll seat you as soon as a table opens up.</p>
+            <form class="walkin-form" id="walkinForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="e.g. Hassan Raza" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone (for notification)</label>
+                        <input type="tel" placeholder="e.g. 0311-1234567" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Party Size</label>
+                    <select required>
+                        <option value="">Select guests</option>
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6+ people</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width">Join the Queue</button>
+            </form>
+            <div class="walkin-confirmation hidden" id="walkinConfirm">
+                <div class="queue-card">
+                    <span class="queue-label">You're in the queue!</span>
+                    <div class="queue-number" id="queueNumber">#4</div>
+                    <p>We'll notify you when your table is ready. Estimated wait: <strong>15–20 min</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <span class="section-label">Guest Reviews</span>
+        <h2>What Our Guests Say</h2>
+        <div class="testimonials-track">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The atmosphere is cozy, the service is always top-notch, and the food never disappoints. The Alfredo Pasta is a must-try!"</p>
+                <span>— Emily J.</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"I've been coming here for years. The staff is friendly and the food is always fresh. The Tiramisu is my favourite!"</p>
+                <span>— John D.</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Ordered online for the first time — the process was so easy. Pizza arrived hot and delicious. Will definitely order again!"</p>
+                <span>— Sophia M.</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The Beef Steak was cooked to absolute perfection. The staff really made our visit unforgettable."</p>
+                <span>— Olivia K.</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="cta-inner">
+            <h2>Ready to Order?</h2>
+            <p>Dine in or get it delivered — we've got you covered.</p>
+            <a href="index.html" class="btn-primary large">Order Online Now</a>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="loc-grid">
+            <div class="loc-info">
+                <span class="section-label">Find Us</span>
+                <h3>Location & Hours</h3>
+                <p><strong>Address:</strong> 123 Food Street, Gourmet City</p>
+                <p><strong>Hours:</strong> Monday – Sunday &nbsp;|&nbsp; 1:00 PM – 11:00 PM</p>
+            </div>
+            <div class="loc-contact">
+                <span class="section-label">Get in Touch</span>
+                <h3>Contact Us</h3>
+                <p>📞 &nbsp;+92 300 123 4567</p>
+                <p>✉️ &nbsp;hello@dinehub.pk</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>DineHub</strong>
+                <span>Savor the Taste of Excellence</span>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#highlights">Menu</a>
+                <a href="#reserve">Reserve</a>
+                <a href="#walkin">Walk-In</a>
+                <a href="index.html">Order Online</a>
+            </div>
+            <div class="footer-social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2024 DineHub | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
