@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DineHub — Order Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="order-page">
+
+    <nav class="top-nav">
+        <div class="nav-brand">DineHub</div>
+        <div class="nav-links">
+            <a href="#Starters">Starters</a>
+            <a href="#Main-course">Main</a>
+            <a href="#Desserts">Desserts</a>
+            <a href="#Beverages">Beverages</a>
+            <a href="#Extras">Extras</a>
+            <a href="home.html" class="nav-back">← Home</a>
+            <!-- Login/Register button injected here by script.js -->
+        </div>
+    </nav>
+
+    <div class="order-hero">
+        <h1>Order Online</h1>
+        <p>Fresh from our kitchen to your table or door.</p>
+
+        <!-- ORDER TYPE SELECTOR -->
+        <div class="order-type-selector">
+            <button class="order-type-btn active" data-type="dine-in" id="btnDineIn">
+                <span class="type-icon">🍽️</span>
+                <strong>Dine-In</strong>
+                <small>Eat at the restaurant</small>
+            </button>
+            <button class="order-type-btn" data-type="delivery" id="btnDelivery">
+                <span class="type-icon">🛵</span>
+                <strong>Delivery</strong>
+                <small>Get it delivered</small>
+            </button>
+        </div>
+
+        <!-- DINE-IN: table selection -->
+        <div class="order-extra-fields" id="dineinFields">
+            <label>Select Table</label>
+            <select id="tableSelect">
+                <option value="">Choose available table</option>
+                <option value="1">Table 1 — 2 seats</option>
+                <option value="2">Table 2 — 4 seats</option>
+                <option value="3">Table 3 — 4 seats</option>
+                <option value="4">Table 4 — 6 seats</option>
+                <option value="5">Table 5 — 8 seats</option>
+                <option value="6">Table 6 — 2 seats</option>
+                <option value="7">Table 7 — 4 seats</option>
+            </select>
+        </div>
+
+        <!-- DELIVERY: address -->
+        <div class="order-extra-fields hidden" id="deliveryFields">
+            <label>Delivery Address</label>
+            <input type="text" id="deliveryAddress" placeholder="Enter your delivery address…">
+        </div>
+    </div>
+
+    <main class="order-layout">
+        <div class="menu-column">
+
+            <section id="Starters">
+                <h2 class="category-heading"><span>Starters</span></h2>
+                <div class="items-grid">
+                    <div class="menu-card" data-price="5.99" data-name="Mozzarella Sticks" data-item-id="1">
+                        <div class="card-img" style="background-image:url('mz.jpg')"></div>
+                        <div class="card-body">
+                            <h3>Mozzarella Sticks</h3>
+                            <p>Crispy breaded mozzarella with marinara sauce.</p>
+                            <div class="card-footer">
+                                <strong>$5.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="4.99" data-name="Nachos" data-item-id="2">
+                        <div class="card-img" style="background-image:url('nachos.jpg')"></div>
+                        <div class="card-body">
+                            <h3>Nachos</h3>
+                            <p>Tortilla chips with cheese, jalapeños, and salsa.</p>
+                            <div class="card-footer">
+                                <strong>$4.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="6.49" data-name="Stuffed Mushrooms" data-item-id="3">
+                        <div class="card-img" style="background-image:url('Stuffed Mushrooms {Easy Appetizer} - Two Peas & Their Pod.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Stuffed Mushrooms</h3>
+                            <p>Mushrooms stuffed with garlic, herbs, and cream cheese.</p>
+                            <div class="card-footer">
+                                <strong>$6.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="7.99" data-name="Jalapeño Loaded Fries" data-item-id="4">
+                        <div class="card-img" style="background-image:url('fries.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Jalapeño Loaded Fries</h3>
+                            <p>Crispy fries topped with jalapeños, cheese, creamy sauce.</p>
+                            <div class="card-footer">
+                                <strong>$7.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Main-course">
+                <h2 class="category-heading"><span>Main Course</span></h2>
+                <div class="items-grid">
+                    <div class="menu-card" data-price="12.99" data-name="Beef Steak" data-item-id="5">
+                        <div class="card-img" style="background-image:url('beefsteak.jpg')"></div>
+                        <div class="card-body">
+                            <h3>Beef Steak</h3>
+                            <p>Grilled beef with mashed potatoes or seasonal vegetables.</p>
+                            <div class="card-footer">
+                                <strong>$12.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="14.99" data-name="Chicken Steak" data-item-id="6">
+                        <div class="card-img" style="background-image:url('Chicken Fried Steak.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Chicken Steak</h3>
+                            <p>Grilled chicken in citrus glaze, served with vegetables.</p>
+                            <div class="card-footer">
+                                <strong>$14.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="10.99" data-name="Pizza" data-item-id="7">
+                        <div class="card-img" style="background-image:url('pizza.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Signature Pizza</h3>
+                            <p>Topped with fresh ingredients and melted cheese.</p>
+                            <div class="card-footer">
+                                <strong>$10.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="13.49" data-name="Alfredo Pasta" data-item-id="8">
+                        <div class="card-img" style="background-image:url('Alfredo.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Alfredo Pasta</h3>
+                            <p>Creamy Alfredo with Parmesan and grilled chicken.</p>
+                            <div class="card-footer">
+                                <strong>$13.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="8.99" data-name="Club Sandwich" data-item-id="9">
+                        <div class="card-img" style="background-image:url('Club sandwich.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Club Sandwich</h3>
+                            <p>Three-layer sandwich with chicken, bacon, lettuce, tomato.</p>
+                            <div class="card-footer">
+                                <strong>$8.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Desserts">
+                <h2 class="category-heading"><span>Desserts</span></h2>
+                <div class="items-grid">
+                    <div class="menu-card" data-price="4.99" data-name="Ice Cream" data-item-id="10">
+                        <div class="card-img" style="background-image:url('iceee.jpg')"></div>
+                        <div class="card-body">
+                            <h3>Ice Cream</h3>
+                            <p>Choose from chocolate, vanilla, or mint chocolate chip.</p>
+                            <div class="card-footer">
+                                <strong>$4.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="5.99" data-name="Tiramisu" data-item-id="11">
+                        <div class="card-img" style="background-image:url('Chocolate Tiramisu.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Tiramisu</h3>
+                            <p>Coffee-soaked biscuits with mascarpone cream layers.</p>
+                            <div class="card-footer">
+                                <strong>$5.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="6.49" data-name="Strawberry Cheesecake" data-item-id="12">
+                        <div class="card-img" style="background-image:url('cheesecake.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Strawberry Cheesecake</h3>
+                            <p>Rich cheesecake with a fresh strawberry topping.</p>
+                            <div class="card-footer">
+                                <strong>$6.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="4.49" data-name="Lemon Tart" data-item-id="13">
+                        <div class="card-img" style="background-image:url('Lemon Tart.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Lemon Tart</h3>
+                            <p>Tangy lemon filling in a buttery crispy crust.</p>
+                            <div class="card-footer">
+                                <strong>$4.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Beverages">
+                <h2 class="category-heading"><span>Beverages</span></h2>
+                <div class="items-grid">
+                    <div class="menu-card" data-price="2.99" data-name="Carbonated Drink" data-item-id="14">
+                        <div class="card-img" style="background-image:url('drink.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Carbonated Drink</h3>
+                            <p>Choice of sodas and fizzy beverages.</p>
+                            <div class="card-footer">
+                                <strong>$2.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="3.49" data-name="Iced Latte" data-item-id="15">
+                        <div class="card-img" style="background-image:url('latte.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Iced Latte</h3>
+                            <p>Creamy iced coffee with a shot of espresso.</p>
+                            <div class="card-footer">
+                                <strong>$3.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="3.49" data-name="Iced Mocha" data-item-id="16">
+                        <div class="card-img" style="background-image:url('Iced Mocha.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Iced Mocha</h3>
+                            <p>Chocolatey iced coffee topped with whipped cream.</p>
+                            <div class="card-footer">
+                                <strong>$3.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="2.49" data-name="Hot Chocolate" data-item-id="17">
+                        <div class="card-img" style="background-image:url('hotchoco.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Hot Chocolate</h3>
+                            <p>Warm, rich chocolate drink with whipped cream.</p>
+                            <div class="card-footer">
+                                <strong>$2.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="2.99" data-name="Cappuccino" data-item-id="18">
+                        <div class="card-img" style="background-image:url('Cappuccino.jpeg')"></div>
+                        <div class="card-body">
+                            <h3>Cappuccino</h3>
+                            <p>Espresso with steamed milk and foam.</p>
+                            <div class="card-footer">
+                                <strong>$2.99</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Extras">
+                <h2 class="category-heading"><span>Extras</span></h2>
+                <div class="items-grid">
+                    <div class="menu-card" data-price="1.49" data-name="Dipping Sauces" data-item-id="19">
+                        <div class="card-img" style="background-image:url('sauces.jpg')"></div>
+                        <div class="card-body">
+                            <h3>Dipping Sauces</h3>
+                            <p>Various sauces to complement your meal.</p>
+                            <div class="card-footer">
+                                <strong>$1.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-price="2.49" data-name="Plain Fries" data-item-id="20">
+                        <div class="card-img" style="background-image:url('plainfries.jpg')"></div>
+                        <div class="card-body">
+                            <h3>Plain Fries</h3>
+                            <p>Crispy fries served with ketchup and mayo.</p>
+                            <div class="card-footer">
+                                <strong>$2.49</strong>
+                                <button class="add-to-cart">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- end menu-column -->
+
+        <!-- STICKY CART -->
+        <aside class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h2>Your Order</h2>
+                <div class="cart-type-badge" id="cartTypeBadge">🍽️ Dine-In</div>
+            </div>
+
+            <div class="cart-items-list" id="cart-container">
+                <div class="cart-empty">
+                    <span>🛒</span>
+                    <p>Your cart is empty.<br>Add items to get started.</p>
+                </div>
+            </div>
+
+            <div class="cart-totals" id="cartTotals" style="display:none">
+                <div class="totals-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="totals-row">
+                    <span>Tax (10%)</span>
+                    <span id="taxAmount">$0.00</span>
+                </div>
+                <div class="totals-row total-row">
+                    <span>Total</span>
+                    <span id="total-price">$0.00</span>
+                </div>
+            </div>
+
+            <div class="cart-notes" id="cartNotes" style="display:none">
+                <label>Special Instructions</label>
+                <textarea id="specialNote" placeholder="Allergies, preferences, extra requests…" rows="2"></textarea>
+            </div>
+
+            <div class="cart-actions" id="cartActions">
+                <button id="clear-cart" class="btn-clear">Clear Cart</button>
+                <button id="confirm-order" class="btn-confirm">Place Order</button>
+            </div>
+
+            <div class="order-confirmed hidden" id="orderConfirmed">
+                <div class="confirm-icon">✓</div>
+                <h3>Order Placed!</h3>
+                <p id="orderSummaryText">Your order is being prepared.</p>
+                <div class="order-id-display">Order #<span id="orderId">—</span></div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>DineHub</strong>
+                <span>Savor the Taste of Excellence</span>
+            </div>
+            <div class="footer-links">
+                <a href="home.html">Home</a>
+                <a href="#Starters">Starters</a>
+                <a href="#Main-course">Main Course</a>
+                <a href="#Desserts">Desserts</a>
+            </div>
+        </div>
+        <p class="footer-copy">Mon–Sun 1:00 PM – 11:00 PM &nbsp;|&nbsp; 123 Food Street, Gourmet City &nbsp;|&nbsp; &copy; 2024 DineHub</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
